@@ -1,0 +1,40 @@
+#!/bin/bash -eu
+
+PATH=/bin/:/usr/bin:$PATH
+
+function if_failed_echo {
+    if [ 0 -lt $? ]; then
+        echo "$1";
+        exit 1;
+    fi
+}
+
+case "$1" in
+  -v|--version)
+    version="$2"
+esac
+
+ARCHIVA_ZIP=apache-archiva-$version-bin.zip
+ARCHIVA_DIR=apache-archiva-$version
+
+echo "Downloading $ARCHIVA_ZIP"
+# Unzip without overwriting existing files so that any custom configuration is kept.
+wget -N http://apache.cs.utah.edu/archiva/$version/binaries/$ARCHIVA_ZIP -P /tmp/
+
+if_failed_echo "Failed to download $ARCHIVA_ZIP"
+
+echo "Unzipping $ARCHIVA_ZIP"
+unzip -nd $OPENSHIFT_ARCHIVA_DIR/usr/ /tmp/$ARCHIVA_ZIP
+
+if_failed_echo "Failed to unzip $ARCHIVA_ZIP"
+
+echo "Creating $ARCHIVA_DIR soft link"
+rm -f $OPENSHIFT_ARCHIVA_DIR/usr/archiva
+ln -s $OPENSHIFT_ARCHIVA_DIR/usr/$ARCHIVA_DIR $OPENSHIFT_ARCHIVA_DIR/usr/archiva
+
+if_failed_echo "Failed to create $ARCHIVA_DIR soft link"
+
+echo "Deleting downloaded $ARCHIVA_ZIP file"
+rm -f /tmp/$ARCHIVA_ZIP
+
+if_failed_echo "Failed to delete downloaded $ARCHIVA_ZIP"

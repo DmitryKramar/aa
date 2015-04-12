@@ -1,0 +1,44 @@
+---
+Name: archiva
+Cartridge-Short-Name: ARCHIVA
+Display-Name: Apache Archiva
+Source-Url: https://github.com/shiver-me-timbers/openshift-origin-cartridge-archiva.git
+Description: Archiva is an application for managing one or more remote repositories, including administration, artifact handling, browsing and searching.
+Version: '2.2.0'
+Versions:
+- '2.2.0'
+License: ASL 2.0
+Vendor: Apache
+Cartridge-Version: 1.0
+Cartridge-Vendor: shivermetimbers
+Categories:
+- web_framework
+- domain_scope
+- service
+- instant_app
+- java
+- maven
+- build
+- archiva
+Website: http://archiva.apache.org
+Provides:
+- apache-archiva-2.2.0
+Publishes:
+Subscribes:
+Endpoints:
+- Private-IP-Name: IP
+  Private-Port-Name: PORT
+  Private-Port: 8080
+  Public-Port-Name: PROXY_PORT
+  Protocols:
+  - http
+  Mappings:
+  - Frontend: ''
+    Backend: ''
+    Options:
+      tohttps: true
+Scaling:
+  Min: 1
+  Max: 1
+Metrics:
+- uptime

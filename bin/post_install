@@ -1,0 +1,7 @@
+#!/bin/bash -eu
+
+PATH=/bin/:/usr/bin:$PATH
+
+# After the archiva.erb is processed it's executable flag is removed.
+echo "Making the archiva script executable."
+chmod +x $OPENSHIFT_ARCHIVA_DIR/usr/archiva/bin/archiva
