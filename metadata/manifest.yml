@@ -2,7 +2,7 @@
 Name: archiva
 Cartridge-Short-Name: ARCHIVA
 Display-Name: Apache Archiva
-Source-Url: https://github.com/shiver-me-timbers/openshift-origin-cartridge-archiva.git
+Source-Url: https://github.com/DmitryKramar/aa.git
 Description: Archiva is an application for managing one or more remote repositories, including administration, artifact handling, browsing and searching.
 Version: '2.2.0'
 Versions:
@@ -10,7 +10,7 @@ Versions:
 License: ASL 2.0
 Vendor: Apache
 Cartridge-Version: 1.0
-Cartridge-Vendor: shivermetimbers
+Cartridge-Vendor: DK
 Categories:
 - web_framework
 - domain_scope
