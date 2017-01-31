@@ -4,9 +4,9 @@ Cartridge-Short-Name: ARCHIVA
 Display-Name: Apache Archiva
 Source-Url: https://github.com/DmitryKramar/aa.git
 Description: Archiva is an application for managing one or more remote repositories, including administration, artifact handling, browsing and searching.
-Version: '2.2.0'
+Version: '2.2.1'
 Versions:
-- '2.2.0'
+- '2.2.1'
 License: ASL 2.0
 Vendor: Apache
 Cartridge-Version: 1.0
@@ -22,7 +22,7 @@ Categories:
 - archiva
 Website: http://archiva.apache.org
 Provides:
-- apache-archiva-2.2.0
+- apache-archiva-2.2.1
 Publishes:
 Subscribes:
 Endpoints:
