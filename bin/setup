@@ -19,7 +19,7 @@ ARCHIVA_DIR=apache-archiva-$version
 
 echo "Downloading $ARCHIVA_ZIP"
 # Unzip without overwriting existing files so that any custom configuration is kept.
-wget -N http://archive.apache.org/dist/archiva/2.2.0/binaries/$ARCHIVA_ZIP -P /tmp/
+wget -N http://archive.apache.org/dist/archiva/2.2.1/binaries/$ARCHIVA_ZIP -P /tmp/
 
 if_failed_echo "Failed to download $ARCHIVA_ZIP"
 
